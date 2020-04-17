@@ -31,7 +31,14 @@ usa el siguiente comando para empezar a ejecutar el servidor de Django
 ```
 python manage.py runserver
 ```
-Puedes acceder a el en tu navegador en http:localhost:8000
+
+Puedes acceder a el en tu navegador en http://localhost:8000. Para poder ver los datos deberás usar las siguientes credenciales: 
+```
+username = admin
+password = madrid2019
+```
+
+También puedes acceder a la parte de administración de la aplicación en http://localhost:8000/admin
 
 
 ## Diseño

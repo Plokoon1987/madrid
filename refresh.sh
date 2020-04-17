@@ -8,6 +8,6 @@ cp quality/init_migrations/* quality/migrations/
 
 python manage.py migrate
 
-python manage.py createsuperuser --email frilly_3@hormail.com --username=froylan
+python manage.py createsuperuser --email admin@admin.com --username=admin
 
 python manage.py runserver
