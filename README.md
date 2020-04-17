@@ -27,6 +27,7 @@ pip install -r requirements.txt
 ```
 
 ## Ejecución
+Entra en la carpeta donde esté el archivo "manage.py"
 usa el siguiente comando para empezar a ejecutar el servidor de Django
 ```
 python manage.py runserver
