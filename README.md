@@ -1,16 +1,16 @@
-# Contaminación de Madrid
+# Madrid
 
-# Requisitos
+## Requisitos
 
 ### Web Framework: Django y Django-Rest
-Se ha escogido Django porque proporciona una gran cantidad de herramientas para trabajar con Bases de Datos. Además de su diseño intuitivo.
+Se ha escogido Django porque proporciona una gran cantidad de herramientas para trabajar con bases de Datos además de su diseño intuitivo.
 
 Se ha escogido Django-Rest como un módulo adicional de Django para poder proporcionar funcionalidad REST a otros servicios que lo requieran en este formato
 
 ### Base de Datos:
-Se recomienda PostgreSQL. Esta base de datos tiene modulos para trabajar con elementos de posicionamiento y puede integrarse perfectamente con Django
+Se recomienda PostgreSQL. Esta base de datos tiene modulos para trabajar con elementos de posicionamiento y puede integrarse perfectamente con Django.
 
-Sin embargo con el propósito de entregar una herramienta libre de procesos de instalación se usará SQLite3
+Sin embargo con el propósito de entregar una herramienta "casi" libre de procesos de instalación se usará SQLite3
 
 
 ## Diseño
@@ -22,16 +22,14 @@ Se ha desarrollado un archivo de migración inicial que se baja el archivo direc
 
 Se recorre cada uno de los archivos .csv y se insertan los datos en la base de datos.
 Se han desarrollado 3 Modelos para almacenar los datos:
-* Estacion: Contiene los campos provincia, municipio y estacion
-* DiaMedicion: Contiene los campos ano, mes, dia, magnitud y punto_muestreo. Se añade el campo estacion para poder relacionarlo con el elemento Estacion al que pertenece
-* HoraMedicion: Contiene los campos hora, cantidad y validacion. Se añade el campo dia_mediacion para poder relacionarlo con el elemento DiaMedicion al que pertenece
+* Estacion: Contiene los campos "provincia", "municipio" y "estacion"
+* DiaMedicion: Contiene los campos "ano", "mes", "dia", "magnitud" y "punto_muestreo". Se añade el campo "estacion" para poder relacionarlo con el elemento Estacion al que pertenece
+* HoraMedicion: Contiene los campos "hora", "cantidad" y "validacion". Se añade el campo dia_mediacion para poder relacionarlo con el elemento DiaMedicion al que pertenece
 
 #### Notas:
 * Se ha procedido a dividir los datos en distintos modelos para facilitar y agilizar los filtros en el futuro. También se usa un criterio de "Unica fuente de la verdad" ya que si se hubiese puesto toda la información en una sola tabla habrían datos repetidos, y esto puede resultar tedioso a la hora de realizar cambios en los campos padre, ya qu ehabría que recorrer todos si se quiere hacer algún cambio
 
-* No se ha procedido a convertir la fecha en elemento "Date" ya que al haber tomado los datos de una fuente externa a nosotros y que este formato marca un patrón, en el futuro puede será más facil al integrar la aplicación con otras aplicaciones que usen estos mismos datos.
-
-También el hecho que los datos usen la hora "24" como parte del día entra en contradicción con como Python considera los días, es decir, la hora "24" es considerada por Python como la hora "00" del día siguiente. Esto complicaría muchisimo en el futuro los filtros , ya que hay que tomar en cuenta dos días para filtar lo que Madrid entiende como un día. Otra solución sería meter cada hora como una hora menos, es decir la hora 1 sería la 0 y la hora 24 la 23, esto nos mantendría dentro del mismo día para hacer filtros pero rompe el criterio establecido por la fuente de los datos.
+* No se ha procedido a convertir la fecha en elemento "Date" ya que al haber tomado los datos de una fuente externa a nosotros y que este formato marca un patrón, en el futuro puede será más facil al integrar la aplicación con otras aplicaciones que usen estos mismos datos. También el hecho que los datos usen la hora "24" como parte del día entra en contradicción con como Python considera los días, es decir, la hora "24" es considerada por Python como la hora "00" del día siguiente. Esto complicaría muchisimo en el futuro los filtros , ya que hay que tomar en cuenta dos días para filtar lo que Madrid entiende como un día. Otra solución sería meter cada hora como una hora menos, es decir la hora 1 sería la 0 y la hora 24 la 23, esto nos mantendría dentro del mismo día para hacer filtros pero rompe el criterio establecido por la fuente de los datos.
 
 
 ## Objetivo 2: Arquitectura
