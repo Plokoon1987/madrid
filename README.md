@@ -1,5 +1,9 @@
 # Madrid
 
+El objetivo es descargar los datos de contaminación de la ciudad de Madrid y cargarlos en una base de datos. Se adjunta una aplicación web django para poder visualizar el contenido cargado a la base de datos
+
+También se explica la arquitectura a aplicar para dar servicio a las demandas impuestas por el problema
+
 ## Requisitos
 
 ### Web Framework: Django y Django-Rest
