@@ -15,8 +15,10 @@ def download_and_load(url):
             if '.csv' not in zipinfo.filename:
                 continue
 
+            print(f'\nReading: {zipinfo.filename}')
             csv_file = io.StringIO(thezip.read(zipinfo).decode())
             reader = csv.DictReader(csv_file, delimiter=';')
+
             for row in reader:
                 if row['MAGNITUD'] not in ['8', '08', '008']:
                     continue
