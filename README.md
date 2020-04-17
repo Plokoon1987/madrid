@@ -13,6 +13,27 @@ Se recomienda PostgreSQL. Esta base de datos tiene modulos para trabajar con ele
 Sin embargo con el propósito de entregar una herramienta "casi" libre de procesos de instalación se usará SQLite3
 
 
+## Instalacion
+Crear un entorno virtual (ej. venv), activarlo y actualizarlo
+```
+python3 -m venv env
+. env/bin/activate
+pip install --upgrade pip setuptools pkg-resources
+```
+
+Instala los paquetes python necesarios
+```
+pip install -r requirements.txt
+```
+
+## Ejecución
+usa el siguiente comando para empezar a ejecutar el servidor de Django
+```
+python manage.py runserver
+```
+Puedes acceder a el en tu navegador en http:localhost:8000
+
+
 ## Diseño
 
 ### Objetivo 1: Lectura y tratamiento
