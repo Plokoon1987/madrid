@@ -21,7 +21,7 @@ python3 -m venv env
 pip install --upgrade pip setuptools pkg-resources
 ```
 
-Instala los paquetes python necesarios
+Entra en la carpeta donde esté el archivo "requirements.txt " y usa el siguiente comando para instalar los paquetes python necesarios
 ```
 pip install -r requirements.txt
 ```
